@@ -26,17 +26,16 @@ gulp.task('sass', function () {
             cascade: false
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(browserSync.stream())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./public/css'));
-
+        .pipe(gulp.dest('./public/css'))
+        .pipe(browserSync.stream());
 });
 
             //browser-sync
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./public"
         }
     });
     gulp.watch('./frontend/stylesheets/**/*.scss', ['sass']);
