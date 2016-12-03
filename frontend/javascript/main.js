@@ -1,5 +1,5 @@
 requirejs.config({
-    baseUrl: './js'
+    baseUrl: './public/js'
 });
 
 define(["jquery", "domReady"], function($) {
